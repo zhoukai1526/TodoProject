@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.iwintrue.todoproject"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+        ndk{
+            abiFilters "armeabi","armeabi-v7a","x86"
+        }
+
+        //ndk编译
+        ndk {
+            moduleName "cpp2-lib"
+        }
+//
+//        sourceSets.main {
+//            jni.srcDirs = []
+//        }
+//        task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+//            commandLine '/Users/zhoukai/Library/Android/sdk/ndk-bundle/ndk-build',//这里本地ndk的路径
+//                    'NDK_PROJECT_PATH=build/intermediates/ndk',
+//                    'NDK_LIBS_OUT=src/main/jniLibs',
+//                    'APP_BUILD_SCRIPT=src/main/jni/Android.mk',
+//                    'NDK_APPLICATION_MK=src/main/jni/Application.mk'
+//        }
+//        tasks.withType(JavaCompile){
+//            compileTask->compileTask.dependsOn ndkBuild
+//        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

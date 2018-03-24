@@ -1,0 +1,85 @@
+# For more information about using CMake with Android Studio, read the
+# documentation: https://d.android.com/studio/projects/add-native-code.html
+
+# Sets the minimum version of CMake required to build the native library.
+
+cmake_minimum_required(VERSION 3.4.1)
+
+
+
+add_library( # Sets the name of the library.
+             ffempg-utils
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             src/main/cpp/ffempgutil.c )
+
+
+add_library(jnione STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(jnione PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/jni1/${ANDROID_ABI}/libcpp-lib.so)
+
+
+
+
+add_library(avcodec STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(avcodec PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libavcodec-56.so)
+
+add_library(avdevice STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(avdevice PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libavdevice-56.so)
+
+
+add_library(avfilter STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(avfilter PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libavfilter-5.so)
+
+
+add_library(avformat STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(avformat PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libavformat-56.so)
+
+
+add_library(avutil STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(avutil PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libavutil-54.so)
+
+add_library(postproc STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(postproc PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libpostproc-53.so)
+
+add_library(swresample STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(swresample PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libswresample-1.so)
+
+add_library(swscale STATIC IMPORTED)
+#添加动态库的路径
+set_target_properties(swscale PROPERTIES IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/src/main/cpp/libswscale-3.so)
+
+
+
+
+find_library( # Sets the name of the path variable.
+              log-lib
+
+              # Specifies the name of the NDK library that
+              # you want CMake to locate.
+              log )
+
+
+target_link_libraries( ffempg-utils
+                       jnione
+                       avcodec
+                       avdevice
+                       avfilter
+                       avformat
+                       avutil
+                       postproc
+                       swresample
+                       swscale
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )

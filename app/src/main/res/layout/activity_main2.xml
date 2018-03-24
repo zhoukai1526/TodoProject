@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iwintrue.todoproject.ndk.Main2Activity">
+
+
+    <Button
+        android:id="@+id/btn_cStr"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="会掉c字符串"></Button>
+ <Button
+        android:id="@+id/btn_sum"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="c计算和"></Button>
+    <Button
+        android:id="@+id/btn_cat"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="拼接字符串"></Button>
+    <Button
+        android:id="@+id/btn_carray"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="返回c数组"></Button>
+
+    <Button
+        android:id="@+id/btn_check_pass"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="检查密码是否正确"></Button>
+    <Button
+        android:id="@+id/btn_use_java"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="调用java方法"></Button>
+    <Button
+        android:id="@+id/btn_refresh_ui"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="c回调ui"></Button>
+    <Button
+        android:id="@+id/btn_callback_stuct"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="返回java结构体"></Button>
+    <Button
+        android:id="@+id/btn_callback_jni"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="回调JNI方法"></Button>
+
+
+
+
+
+</LinearLayout>

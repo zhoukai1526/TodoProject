@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iwintrue.todoproject.ndk.FFemPegActivity">
+
+
+
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.iwintrue.todoproject.ndk.FFemPegActivity">
+
+        <Button
+            android:id="@+id/btn_ffempeg_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用ffempg"
+            tools:text="调用ffempg"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            />
+        <Button
+            android:id="@+id/btn_avcode_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取avconfig"
+            tools:text="获取avconfig"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/btn_ffempeg_config"
+            />
+        />
+        <Button
+            android:id="@+id/btn_avformat_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取avformat"
+            tools:text="获取avformat"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/btn_avcode_config"
+            />
+        <Button
+            android:id="@+id/btn_avcodec_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="avcode支持信息"
+            tools:text="avcode支持信息"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/btn_avformat_config"
+            />
+        <Button
+            android:id="@+id/btn_avfilter_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="avfilter支持信息"
+            tools:text="avfilter支持信息"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_avcodec_config"
+            />
+
+        <Button
+            android:id="@+id/btn_mp4_to_yuv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频解码"
+            tools:text="视频解码"
+            android:onClick="onClick"
+            android:textSize="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_avcodec_config"
+            app:layout_constraintLeft_toRightOf="@+id/btn_avfilter_config"
+            />
+
+        <TextView
+            android:id="@+id/tv_show_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btn_avfilter_config" />
+
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</ScrollView>
